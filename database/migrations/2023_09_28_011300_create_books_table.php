@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('autor');
             $table->string('titulo');
             $table->string('genero');
+            $table->enum('estado', ['DISPONIBLE', 'PRESTADO'])->default('DISPONIBLE');
             $table->string('ejemplares');
             $table->integer('categoriId')->unsigned();
             $table->foreign('categoriId')->references('id')->on('categorias');
